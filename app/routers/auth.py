@@ -5,11 +5,12 @@ from pkg.database import get_db
 from pkg import schemas, models, utils, oauth2
 
 router = APIRouter(
+    prefix= "/login",
     tags = ['Authentication']
 
 )
 
-@router.post("/login", response_model=schemas.Token)
+@router.post("/", response_model=schemas.Token)
 # changed to use fastapi Oauth2PasswordRequestForm to retrieve user creds
 #def login(user_credentials: schemas.UserLogin, db: Session = Depends(get_db)):
 def login(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):

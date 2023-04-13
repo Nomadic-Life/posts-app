@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import text
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 
-from pkg.database import Base
+from .database import Base
 
 
 class Posts(Base):
@@ -27,6 +27,7 @@ class User(Base):
     password= Column(String, nullable=False )
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
     phone_number = Column(String)
+    address = Column(String)
 
 
 class Vote(Base):

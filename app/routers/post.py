@@ -78,7 +78,7 @@ def get_post(id: int, db: Session = Depends(database.get_db), current_user: int 
     
     
     ''' used if you want to make posts private
-    if post.owner_id != current_user.id:Whatever advice you give, be short
+    if post.owner_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f"Not authorized to perform requested action")
     '''
     return results
