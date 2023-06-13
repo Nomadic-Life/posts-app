@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 # req for CORS 
 from fastapi.middleware.cors import CORSMiddleware
-from pkg import models
-from pkg.database import engine
-from routers import post, user, auth, vote
-from config import settings 
+from .pkg import models
+from .pkg.database import engine
+from .routers import post, user, auth, vote
+from .config import settings 
 
 # don't need this since we'regit using alembic. Could leave it and it wouldn't break anything it would just uild missing talbles upon starting
  # models.Base.metadata.create_all(bind=engine)
@@ -31,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to my awesome api"}
+    return {"message": "Welcome to my awesome api!"}

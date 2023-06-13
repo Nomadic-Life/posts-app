@@ -4,7 +4,7 @@ from fastapi import (APIRouter, Depends, FastAPI, HTTPException, Response,
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from pkg import database, models, oauth2, schemas
+from app.pkg import database, models, oauth2, schemas
 
 
 router = APIRouter(

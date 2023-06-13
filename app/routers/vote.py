@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
-from pkg import schemas, database, models, oauth2
+from app.pkg import schemas, database, models, oauth2
 
 
 
