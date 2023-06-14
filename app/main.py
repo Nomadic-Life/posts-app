@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI 
 # req for CORS 
 from fastapi.middleware.cors import CORSMiddleware
 from .pkg import models
@@ -31,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the jungle!"}
+    return {"message": "Welcome to the jungle we got fun and games!"}
